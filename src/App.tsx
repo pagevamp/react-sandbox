@@ -63,7 +63,7 @@ export default function App() {
 
   return (
     <div>
-      <Counter></Counter>
+      <Counter/>
       <form onSubmit={handleSubmit}>
         <div>
           <input
