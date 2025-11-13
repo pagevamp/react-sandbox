@@ -1,12 +1,16 @@
 .increment, .decrement{
-    background-color: rgb(61, 185, 61);
+    background-color: rgb(32, 175, 32);
     padding: 15px 20px;
     color: white;
     border-radius: 12px;
     border: none;
     font-size: 15px;
+    font-weight: 700;
     margin: 10px 10px;
     cursor: pointer;
+ box-shadow:
+  1px 1px rgb(161, 161, 161),
+  -0.4em 0 0.4em rgb(155, 155, 154);
 }
 
 .increment:hover,
@@ -22,10 +26,11 @@
     color: rgb(72, 72, 240);
     font-size: 3rem;  
     text-align: center; 
+    font-weight: 700;
 }
 
 .background{
-    background-color: rgb(183, 184, 185);
+    background-color: rgb(217, 217, 218);
     padding: 10px 10px;
 }
 

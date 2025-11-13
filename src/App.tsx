@@ -37,13 +37,6 @@ export default function App() {
     document.body.classList.toggle("dark", isDarkMode);
   }, [isDarkMode]);
 
-  const increment = () => {
-    setCount(count + 1);
-  };
-
-  const decrement = () => {
-    setCount(count - 1);
-  };
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
