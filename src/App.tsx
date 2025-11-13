@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import Counter from "./components/Counter/Counter";
+import UserForm from "./components/Form/UserForm/UserForm";
 
 export default function App() {
   const [count, setCount] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [isVisible, setIsVisible] = useState(true);
   const [items, setItems] = useState<string[]>([]);
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
@@ -24,10 +23,6 @@ export default function App() {
   }, [count]);
 
   useEffect(() => {
-    document.title = `Hello ${name}`;
-  }, [name]);
-
-  useEffect(() => {
     if (selectedItem) {
       console.log(selectedItem);
     }
@@ -37,14 +32,6 @@ export default function App() {
     document.body.classList.toggle("dark", isDarkMode);
   }, [isDarkMode]);
 
-
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  };
-
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
 
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
@@ -64,25 +51,10 @@ export default function App() {
   return (
     <div>
       <Counter/>
+
+    <UserForm/>
+
       <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            value={name}
-            onChange={handleNameChange}
-            placeholder="Enter your name"
-          />
-          <p>Name: {name}</p>
-        </div>
-        <div>
-          <input
-            type="email"
-            value={email}
-            onChange={handleEmailChange}
-            placeholder="Enter your email"
-          />
-          <p>Email: {email}</p>
-        </div>
         <div>
           <div>
             <button onClick={toggleVisibility}>
