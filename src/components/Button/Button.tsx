@@ -1,0 +1,16 @@
+import type React from "react";
+
+interface ButtonProps {
+  value: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+const Button = ({ value, onClick }: ButtonProps) => {
+  return (
+    <div>
+      <button onClick={onClick}>{value}</button>
+    </div>
+  );
+};
+
+export default Button;   
