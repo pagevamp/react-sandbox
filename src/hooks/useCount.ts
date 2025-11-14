@@ -8,7 +8,7 @@ export default function useCount() {
   }, [count])
 
   const onDecrement = useCallback(() => {
-    setCount(count - 1)
+    setCount((count) => Math.max(count - 1, 0))
   }, [count])
 
   useEffect(() => {
@@ -21,6 +21,6 @@ export default function useCount() {
       setCount(parseInt(storedCount))
     }
   }, [])
-
+  
   return { count, onIncrement, onDecrement }
 }
