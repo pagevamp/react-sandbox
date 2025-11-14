@@ -1,0 +1,39 @@
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: fit-content;
+}
+
+.item-list__item {
+  position: relative;
+  padding: 6px 12px 6px 26px;  
+  border-radius: 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    transform 0.15s ease;
+}
+
+.item-list__item::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #007bff55; 
+  transition: background-color 0.2s ease;
+}
+
+.item-list__item:hover {
+  background-color: #eef6ff;
+  transform: translateX(3px);
+}
+
+.item-list__item:hover::before {
+  background-color: #007bff;
+}
