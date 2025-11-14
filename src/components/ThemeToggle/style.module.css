@@ -1,0 +1,20 @@
+.toggleBtn {
+  padding: 8px 16px;
+  background-color: #6c757d; /* neutral gray */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.toggleBtn:hover {
+  background-color: #5a6268;
+  transform: translateY(-1px); 
+}
+
+.toggleBtn:active {
+  transform: translateY(0);
+}

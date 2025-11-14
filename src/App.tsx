@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import Counter from "./components/Counter/Counter";
+import { ThemeToggle } from './components/ThemeToggle/ThemeToggle';
 
 export default function App() {
   const [count, setCount] = useState(0);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isVisible, setIsVisible] = useState(true);
@@ -32,10 +32,6 @@ export default function App() {
       console.log(selectedItem);
     }
   }, [selectedItem]);
-
-  useEffect(() => {
-    document.body.classList.toggle("dark", isDarkMode);
-  }, [isDarkMode]);
 
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -108,9 +104,7 @@ export default function App() {
         </div>
       </form>
       <div>
-        <button onClick={() => setIsDarkMode(!isDarkMode)}>
-          Toggle Dark Mode
-        </button>
+        <ThemeToggle/>
       </div>
     </div>
   );
