@@ -1,7 +1,7 @@
 import React from "react"
 
-const User = () => {
-  return <div>User</div>
+const UserInfo = () => {
+  return <div>UserInfo</div>
 }
 
-export default User
+export default UserInfo
