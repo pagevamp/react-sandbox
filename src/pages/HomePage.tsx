@@ -1,11 +1,12 @@
-import ItemCount from "../features/ItemCount/itemCount"
+import UserInfo from "../features/UserInfo/UserInfo"
 
 const HomePage = () => {
-  return (
-    <>
-      <ItemCount />
-    </>
-  )
+    return(
+        <>
+        <ItemCount />
+        <UserInfo/>
+        </>
+    )
 }
 
 export default HomePage
