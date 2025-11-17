@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Button from "../../components/Button/Button"
 import FormField from "../../components/FormField/FormField"
 import useUserFields from "../../hooks/useUserFields"
@@ -9,10 +10,11 @@ const UserInfo = () => {
     email,
     items,
     itemInput,
+    hideItems,
     setItemInput,
+    handleHideItems,
     handleNameChange,
     handleEmailChange,
-    addItem,
     handleSubmit,
   } = useUserFields()
 
@@ -41,15 +43,25 @@ const UserInfo = () => {
         />
 
         <Button content="Submit" className={styles.add} type="submit" />
+        <Button
+          content={hideItems ? "Show Items" : "Hide Items"}
+          className={styles.add}
+          type="submit"
+          onClick={handleHideItems}
+        />
       </form>
-      <div className={styles.itemsList}>
-        {items.map((item, index) => (
-          <p key={index}>
-            {" "}
-            Item no {index + 1}: {item}
-          </p>
-        ))}
-      </div>
+
+      {hideItems === false && (
+        <div className={styles.itemsList}>
+          <p>Selected Items : </p>
+          {items.map((item, index) => (
+            <p key={index}>
+              {" "}
+              Item no {index + 1}: {item}
+            </p>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

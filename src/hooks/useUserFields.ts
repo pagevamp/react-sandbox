@@ -1,8 +1,9 @@
-import { useCallback, useRef, useState } from "react"
+import { useCallback, useState } from "react"
 
 export default function useUserFields() {
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
+  const [hideItems, setHideItems] = useState(false)
   const [itemInput, setItemInput] = useState("")
   const [items, setItems] = useState<string[]>([])
 
@@ -29,9 +30,7 @@ export default function useUserFields() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const newItems = [
-      itemInput.trim() && `${itemInput}`,
-    ].filter(Boolean)
+    const newItems = [itemInput.trim() && `${itemInput}`].filter(Boolean)
 
     setItems((prev) => [...prev, ...newItems])
 
@@ -39,14 +38,21 @@ export default function useUserFields() {
     setEmail("")
     setItemInput("")
   }
+
+  const handleHideItems = () => {
+    setHideItems((prev) => !prev)
+  }
+
   return {
     name,
     email,
     items,
     itemInput,
+    hideItems,
     setItemInput,
     handleNameChange,
     handleEmailChange,
+    handleHideItems,
     addItem,
     handleSubmit,
   }
