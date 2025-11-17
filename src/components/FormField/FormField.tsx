@@ -21,7 +21,6 @@ const FormField = ({
         <label>
           {labelName}
           <input placeholder={placeholder} onChange={onChange} value={value} />
-          <p></p>
         </label>
       </div>
     </>
