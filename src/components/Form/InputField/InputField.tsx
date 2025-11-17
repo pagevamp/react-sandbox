@@ -21,9 +21,6 @@ const InputField = ({ label, type, value, onChange }: InputFieldProps) => {
         placeholder={`Enter your ${label}`}
         className={styles["input-field__input"]}
       />
-      <p className={styles["input-field__value"]}>
-        {`${label.charAt(0).toUpperCase() + label.slice(1)} : ${value}`}
-      </p>
     </div>
   );
 };
