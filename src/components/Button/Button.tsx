@@ -3,7 +3,7 @@ import React from "react"
 interface ButtonInterface {
   content: string
   className?: string
-  onClick: React.MouseEventHandler<HTMLButtonElement>
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 const Button = ({ content, className, onClick }: ButtonInterface) => {
