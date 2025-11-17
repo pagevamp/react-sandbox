@@ -13,7 +13,7 @@
 .toggle-visible-btn {
   padding: 8px 16px;
   margin-bottom: 12px;
-  background-color: #6c757d;   /* neutral gray */
+  background-color: #6c757d;  
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -29,11 +29,24 @@
 
 .toggle-visible-btn:active {
   transform: translateY(0);
-body {
+}
+
+.container {
   background-color: white;
   color: black;
   transition: background-color 0.3s, color 0.3s;
 }
+
+.container.dark{
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark{

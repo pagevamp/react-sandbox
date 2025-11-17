@@ -6,13 +6,15 @@ import { useCounter } from "../../hooks/useCounters";
 const Counter = () => {
     const { count, handleIncrement, handleDecrement } = useCounter();
     return (
-        <section className={styles.background}>
-            <p className={styles.count}>COUNT: {count}</p>
-            <div className={styles.buttonSection}>
-                <Button className={styles.increment } value="Increment" onClick={handleIncrement}/>
-                <Button className={styles.decrement} value="Decrement" onClick={handleDecrement}/>
-            </div>
-        </section>
+        <div className='container'>
+            <section className={styles.background}>
+                <p className={styles.count}>COUNT: {count}</p>
+                <div className={styles.buttonSection}>
+                    <Button className={styles.increment} value="Increment" onClick={handleIncrement} />
+                    <Button className={styles.decrement} value="Decrement" onClick={handleDecrement} />
+                </div>
+            </section>
+        </div>
     )
 }
 

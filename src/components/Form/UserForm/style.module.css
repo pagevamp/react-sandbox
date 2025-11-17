@@ -13,7 +13,8 @@
 .user-form__form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width:30%;
+  margin: auto;
 }
 
 .user-form__button {
@@ -32,10 +33,18 @@
   background-color: #0056b3;
 }
 
-.user-form__welcome {
+.user-form__welcome{
   margin-top: 16px;
   font-size: 16px;
   font-weight: 500;
-  color: #333;
+  color: black;
   text-align: center;
+}
+
+.user-form__welcome .dark {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  text-align: center;;
 }

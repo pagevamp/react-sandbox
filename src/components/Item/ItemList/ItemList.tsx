@@ -5,6 +5,8 @@ interface ItemListProps {
 }
 
 export const ItemList = ({ items, setSelectedItem }: ItemListProps) => (
+  <div className='container'>
+
   <ul className={styles["item-list"]}>
     {items.map((item, index) => (
       <li key={index} className={styles["item-list__item"]} onClick={() => setSelectedItem(item)}>
@@ -12,4 +14,5 @@ export const ItemList = ({ items, setSelectedItem }: ItemListProps) => (
       </li>
     ))}
   </ul>
+    </div>
 );

@@ -6,9 +6,13 @@ interface AddItemProps {
   setInputValue: (value: string) => void;
 }
 
-export const AddItem = ({  addItem, inputValue, setInputValue }: AddItemProps) => (
-  <div>
+const AddItem = ({  addItem, inputValue, setInputValue }: AddItemProps) =>{ 
+  return (
+  <div className="container">
     <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} type="text" placeholder="Add item" className={styles["add-item__input"]}/>
     <Button value="Add Item" onClick={addItem} className={styles["add-item__button"]}/>
-  </div>
-);
+  </div>);
+
+};
+
+export default AddItem;

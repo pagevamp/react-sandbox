@@ -16,19 +16,20 @@ const UserForm = () => {
   };
 
   return (
-    <div className={styles['user-form']}>
-      <form className={styles['user-form__form']} onSubmit={handleSubmit}>
+    <div className='container '>
+    <div className={`${styles['user-form']} container`}>
+      <form className={`${styles['user-form__form']} container`} onSubmit={handleSubmit}>
         <InputField label='name' type='text' value={name} onChange={(e) => setName(e.target.value)} />
         <InputField label='email' type='text' value={email} onChange={(e) => setEmail(e.target.value)} />
         <Button value="Submit" className={styles['user-form__button']} />
       </form>
-
       {submittedName && (
-        <p className={styles['user-form__welcome']}>
+        <p className={`${styles['user-form__welcome']} container`}>
           Welcome, {submittedName}!
         </p>
       )}
     </div>
+  </div>
   );
 };
 
