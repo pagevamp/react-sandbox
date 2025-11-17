@@ -29,4 +29,15 @@
 
 .toggle-visible-btn:active {
   transform: translateY(0);
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+}
+
+body.dark{
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
 }
