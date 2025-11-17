@@ -1,29 +1,29 @@
 import React from "react"
-import { useForm } from "react-hook-form"
 
 interface FormFieldInterface {
   placeholder: string
-  onSubmit: React.FormEventHandler<HTMLFormElement>
+  onSubmit?: React.FormEventHandler<HTMLFormElement>
+  onChange?: React.ChangeEventHandler<HTMLInputElement>
   labelName?: string | null
   className?: string
-  name: string
+  value?: string
 }
 const FormField = ({
   placeholder,
-  onSubmit,
+  onChange,
   labelName,
+  value,
   className,
-  name,
 }: FormFieldInterface) => {
-  const { register } = useForm()
   return (
     <>
-      <form onSubmit={onSubmit} className={className}>
+      <div className={className}>
         <label>
           {labelName}
-          <input placeholder={placeholder} {...register(`${name}`)} />
+          <input placeholder={placeholder} onChange={onChange} value={value} />
+          <p></p>
         </label>
-      </form>
+      </div>
     </>
   )
 }
