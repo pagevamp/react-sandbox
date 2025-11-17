@@ -42,7 +42,7 @@ const UserInfo = () => {
           value={itemInput}
         />
 
-        <Button content="Submit" className={styles.add} type="submit" />
+        <Button content="Add Item" className={styles.add} type="submit" />
         <Button
           content={hideItems ? "Show Items" : "Hide Items"}
           className={styles.add}
