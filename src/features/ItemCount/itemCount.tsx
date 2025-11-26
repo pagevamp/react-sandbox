@@ -1,27 +1,21 @@
-import useCount from "../../hooks/useCount"
-import styles from "./styles.module.css"
-import Button from "../../components/Button/Button"
-import Titles from "../../components/Titles/Titles"
+import useCount from '../../hooks/useCount';
+import styles from './styles.module.css';
 
 const ItemCount = () => {
-  const { count, onIncrement, onDecrement } = useCount()
+  const { count, onIncrement, onDecrement } = useCount();
 
   return (
     <>
-      <Titles className={styles.count} content="COUNT : " />
-      <Titles className={styles.title} content={count} />
-      <Button
-        onClick={onIncrement}
-        className={styles.increment}
-        content="Increment"
-      />
-      <Button
-        onClick={onDecrement}
-        className={styles.decrement}
-        content="Decrement"
-      />
+      <p className={styles.count}>COUNT : </p>
+      <p className={styles.title}>{count}</p>
+      <button onClick={onIncrement} className={styles.increment}>
+        Increment
+      </button>
+      <button onClick={onDecrement} className={styles.decrement}>
+        Decrement
+      </button>
     </>
-  )
-}
+  );
+};
 
-export default ItemCount
+export default ItemCount;

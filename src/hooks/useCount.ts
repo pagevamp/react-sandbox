@@ -10,15 +10,15 @@ export default function useCount() {
   })
 
   const onIncrement = useCallback(() => {
-    setCount(count! + 1)
-  }, [count])
+    setCount((prev) => prev + 1)
+  }, [])
 
   const onDecrement = useCallback(() => {
-    setCount((count) => Math.max(count! - 1, 0))
-  }, [count])
+    setCount((prev) => Math.max(prev - 1, 0))
+  }, [])
 
   useEffect(() => {
-    localStorage.setItem("count", count!.toString())
+    localStorage.setItem("count", count.toString())
   }, [count])
 
   return { count, onIncrement, onDecrement }

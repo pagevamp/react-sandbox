@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: nowrap;
+}
+
+.threat {
+  color: crimson;
+  font-size: medium;
+  font-weight: bolder;
 }
 
 .itemsList,

@@ -7,20 +7,27 @@ interface FormFieldInterface {
   labelName?: string | null
   className?: string
   value?: string
+  name: string
 }
 const FormField = ({
   placeholder,
   onChange,
   labelName,
+  name,
   value,
   className,
 }: FormFieldInterface) => {
   return (
     <>
       <div className={className}>
-        <label>
+        <label htmlFor={name}>
           {labelName}
-          <input placeholder={placeholder} onChange={onChange} value={value} />
+          <input
+            name={name}
+            placeholder={placeholder}
+            onChange={onChange}
+            value={value}
+          />
         </label>
       </div>
     </>

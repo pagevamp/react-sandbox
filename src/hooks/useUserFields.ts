@@ -1,59 +1,47 @@
-import { useCallback, useState } from "react"
+import { useState } from 'react';
 
 export default function useUserFields() {
-  const [email, setEmail] = useState("")
-  const [name, setName] = useState("")
-  const [hideItems, setHideItems] = useState(false)
-  const [itemInput, setItemInput] = useState("")
-  const [items, setItems] = useState<string[]>([])
+  const [userInfo, setUserInfo] = useState({
+    email: '',
+    name: '',
+  });
+  const [userInput, setUserInput] = useState({ email: '', name: '' });
+  const [saveInput, setSaveInput] = useState(false);
 
-  const handleNameChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setName(e.target.value)
-    },
-    []
-  )
+  //for users
+  const handleUserInfoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setUserInfo((previousFormData) => ({
+      ...previousFormData,
+      [name]: value,
+    }));
+  };
 
-  const handleEmailChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setEmail(e.target.value)
-    },
-    []
-  )
-
-  function addItem() {
-    if (itemInput.trim() !== "") {
-      setItems((prev) => [...prev, itemInput])
-      setItemInput("")
+  function takeUsers() {
+    if (userInfo.email !== '' && userInfo.name !== '') {
+      setUserInput({
+        email: userInfo.email.trim(),
+        name: userInfo.name.trim(),
+      });
+      setUserInfo({ email: '', name: '' });
+      setSaveInput(true);
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const newItems = [itemInput.trim() && `${itemInput}`].filter(Boolean)
+  const handleUser = (e: React.FormEvent) => {
+    e.preventDefault();
 
-    setItems((prev) => [...prev, ...newItems])
-
-    setName("")
-    setEmail("")
-    setItemInput("")
-  }
-
-  const handleHideItems = () => {
-    setHideItems((prev) => !prev)
-  }
+    takeUsers();
+  };
 
   return {
-    name,
-    email,
-    items,
-    itemInput,
-    hideItems,
-    setItemInput,
-    handleNameChange,
-    handleEmailChange,
-    handleHideItems,
-    addItem,
-    handleSubmit,
-  }
+    userInfo,
+    userInput,
+    saveInput,
+    setSaveInput,
+    setUserInput,
+    takeUsers,
+    handleUserInfoChange,
+    handleUser,
+  };
 }
